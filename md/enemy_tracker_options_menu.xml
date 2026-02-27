@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="Enemy_Tracker_Options_Menu" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <cues>
+    <cue name="Init" instantiate="false" version="1">
+      <actions>
+        <set_value name="$debugLevelIndexes" exact="['none', 'debug', 'trace']" />
+        <set_value name="$debugChance" exact="0" />
+      </actions>
+      <cues>
+        <cue name="Register_Menu" instantiate="true" version="1">
+          <conditions>
+            <event_cue_signalled cue="md.Simple_Menu_API.Reloaded" />
+          </conditions>
+          <actions>
+            <include_actions ref="md.Enemy_Tracker.Get_Variables" />
+            <debug_text text="'Enemy Tracker Options: Registering Options Menus'" context="false" filter="scripts" chance="$debugChance" />
+            <signal_cue_instantly cue="md.Simple_Menu_API.Register_Options_Menu"
+              param="table[
+                $id      = 'enemy_tracker_options_menu',
+                $columns = 12,
+                $title   = {1972092415, 1},
+                $onOpen  = Enemy_Tracker_Options_Menu,
+              ]" />
+          </actions>
+        </cue>
+
+        <cue name="Enemy_Tracker_Options_Menu" instantiate="true" version="2">
+          <conditions>
+            <event_cue_signalled />
+          </conditions>
+          <actions>
+            <include_actions ref="md.Enemy_Tracker.Get_Variables" />
+            <debug_text text="'Enemy Tracker Options: Opening Enemy Tracker Options Menu'" context="false" filter="scripts" chance="$debugChance" />
+            <debug_text
+              text="'Enemy Tracker Options: Current options: %s' . [@player.entity.$enemyTracker]"
+              context="false" filter="scripts" chance="$debugChance" />
+            <create_list name="$debugLevelOptions" />
+            <do_for_each name="$indexValue" in="$debugLevelIndexes" counter="$index">
+              <do_if value="$index == 1">
+                <set_value name="$textValue" exact="{1972092415, 90991}" />
+              </do_if>
+              <do_elseif value="$index == 2">
+                <set_value name="$textValue" exact="{1972092415, 90992}" />
+              </do_elseif>
+              <do_else>
+                <set_value name="$textValue" exact="{1972092415, 90993}" />
+              </do_else>
+              <append_to_list name="$debugLevelOptions"
+                exact="table[ $text = $textValue, $value = $indexValue ]" />
+            </do_for_each>
+            <set_value name="$debugLevelCurrentIndex" exact="$debugLevelIndexes.indexof.{@player.entity.$enemyTracker.$debugLevel}" />
+            <do_if value="$debugLevelCurrentIndex == 0">
+              <set_value name="$debugLevelCurrentIndex" exact="1" />
+            </do_if>
+
+            <run_actions ref="Add_Title_Row">
+              <param name="title" value="{1972092415, 90900}" />
+            </run_actions>
+
+            <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
+            <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+              param="table[
+                $col = 1,
+                $colSpan = 8,
+                $text = {1972092415, 90990},
+              ]" />
+            <signal_cue_instantly cue="md.Simple_Menu_API.Make_Dropdown"
+              param="table[
+                $id = 'enemy_tracker_debugLevel',
+                $col = 9,
+                $colSpan = 4,
+                $options = $debugLevelOptions,
+                $startOption = $debugLevelCurrentIndex,
+                $onDropDownConfirmed = Enemy_Tracker_Handle_Debug_Level,
+                ]" />
+            <remove_value name="$debugLevelOptions" />
+            <remove_value name="$debugLevelCurrentIndex" />
+          </actions>
+        </cue>
+
+
+        <library name="Add_Title_Row" purpose="run_actions">
+          <params>
+            <param name="title" />
+          </params>
+          <actions>
+            <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" param="table[$selectable = false]" />
+            <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
+              param="table[
+                $col = 1,
+                $colSpan = 12,
+                $fontsize = 'Helper.titleFontSize',
+                $titleColor = 'Color.text_normal',
+                $halign = 'center',
+                $text = $title,
+              ]" />
+            <include_actions ref="Add_Empty_Row" />
+          </actions>
+        </library>
+
+        <library name="Add_Empty_Row" purpose="include_actions">
+          <actions>
+            <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" param="table[$selectable = false]" />
+            <signal_cue_instantly
+              cue="md.Simple_Menu_API.Make_Text"
+              param="table[
+                $col = 1,
+                $colSpan = 12,
+                $height = 'Helper.borderSize',
+                $fontsize = 'Helper.borderSize',
+                ]" />
+          </actions>
+        </library>
+
+        <cue name="Enemy_Tracker_Handle_Debug_Level" instantiate="true" version="1">
+          <conditions>
+            <event_cue_signalled />
+          </conditions>
+          <actions>
+            <include_actions ref="md.Enemy_Tracker.Get_Variables" />
+            <debug_text text="'Enemy Tracker Options: Debug Level changed to %s' .[event.param.$option.$value]" context="false" filter="scripts" chance="$debugChance" />
+            <set_value name="$commonData" exact="@player.entity.$enemyTracker" />
+            <set_value name="player.entity.$enemyTracker.$debugLevel" exact="event.param.$option.$value" />
+            <signal_objects object="player.entity" param="'EnemyTracker.DebugLevelChangedSignal'" />
+            <raise_lua_event name="'EnemyTracker.ConfigChanged'" />
+          </actions>
+        </cue>
+
+        <cue name="Enemy_Tracker_On_Checkbox_Change" instantiate="true" version="2">
+          <conditions>
+            <event_cue_signalled />
+          </conditions>
+          <actions>
+            <include_actions ref="md.Enemy_Tracker.Get_Variables" />
+            <debug_text text="'Enemy Tracker Options: CheckBox %s changed to %s' .[event.param.$id, event.param.$checked]" context="false" filter="scripts" chance="$debugChance" />
+            <!-- <do_if value="event.param.$id == 'enemy_tracker_optimizeRename'">
+              <set_value name="player.entity.$enemyTracker.$optimizeRename" exact="if event.param.$checked then true else false" />
+              <raise_lua_event name="'EnemyTracker.ConfigChanged'" />
+            </do_if> -->
+            <raise_lua_event name="'EnemyTracker.ConfigChanged'" />
+          </actions>
+        </cue>
+
+        <cue name="Enemy_Tracker_On_Button_Click" instantiate="true" version="1">
+          <conditions>
+            <event_cue_signalled />
+          </conditions>
+          <actions>
+            <include_actions ref="md.Enemy_Tracker.Get_Variables" />
+            <debug_text text="'Enemy Tracker Options: Button %s clicked' . [event.param.$id]" context="false" filter="scripts" chance="$debugChance" />
+            <!-- <do_if value="event.param.$id == 'enemy_tracker_assign_on_hidden'">
+              <signal_cue_instantly cue="md.Enemy_Tracker.Assign_POI_On_Hidden_Ships" />
+            </do_if> -->
+          </actions>
+        </cue>
+
+      </cues>
+    </cue>
+
+
+  </cues>
+</mdscript>

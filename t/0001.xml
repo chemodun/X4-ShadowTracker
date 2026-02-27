@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <add sel="/language">
+    <page id="1972092415" voice="no" title="Enemy Tracker" descr="Enemy Tracker">
+      <t id="1">Enemy Tracker</t>
+      <t id="2">Enemy Tracker</t>
+      <t id="100">Put Tracker On</t>
+      <t id="101">%s \(%s\)</t>
+      <t id="111">{1972092415, 100}: {1972092415, 101}</t>
+      <t id="90900">Other</t>
+      <t id="90990">Debug level:</t>
+      <t id="90991">No debug</t>
+      <t id="90992">Debug</t>
+      <t id="90993">Trace</t>
+    </page>
+  </add>
+</diff>

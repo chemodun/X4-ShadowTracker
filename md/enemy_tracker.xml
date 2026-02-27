@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="Enemy_Tracker" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <cues>
+
+    <cue name="Main" version="1">
+      <actions>
+        <set_value name="$debugChance" exact="0" />
+        <include_actions ref="Get_Variables" />
+      </actions>
+      <cues>
+
+        <library name="Get_Variables" version="2">
+          <actions>
+            <do_if value="@player.entity.$enemyTracker == null">
+              <set_value name="player.entity.$enemyTracker" exact="table[
+                $debugLevel = 'trace'
+                ]" />
+            </do_if>
+            <set_value name="$debugChance" exact="if @player.entity.$enemyTracker.$debugLevel == null or @player.entity.$enemyTracker.$debugLevel == 'none' then 0 else 100" />
+          </actions>
+        </library>
+
+      </cues>
+    </cue>
+
+
+  </cues>
+</mdscript>
