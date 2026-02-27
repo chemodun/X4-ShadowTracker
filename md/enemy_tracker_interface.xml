@@ -51,15 +51,15 @@
           <actions>
             <include_actions ref="md.Enemy_Tracker.Get_Variables" />
             <set_value name="$params" exact="event.param" />
-            <debug_text text="'EnemyTracker: Get_Actions on: %s'.[@event.param.$object]" chance="$debugChance" filter="scripts" />
+            <debug_text text="'EnemyTracker: Add_Menu_Actions on: %s'.[@event.param.$object]" chance="$debugChance" filter="scripts" />
             <set_value name="$object" exact="event.param.$object" />
             <signal_cue_instantly
               cue="md.Interact_Menu_API.Add_Action"
               param="table[
                   $id             = 'enemy_tracker_enable_tracker',
                   $section        = 'order',
-                  $text           = {1972092415, 111},
-                  $mouseover      = {1972092415, 111},
+                  $text           = {1972092415, 111}.[@$object.name, @$object.idcode],
+                  $mouseover      = {1972092415, 111}.[@$object.name, @$object.idcode],
                   $active         = true,
                   $callback       = On_Enable_Tracker,
                 ]" />
