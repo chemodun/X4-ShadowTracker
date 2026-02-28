@@ -1,4 +1,4 @@
-# Enemy Tracker
+# Shadow Tracker
 
 
 ## Features
@@ -20,15 +20,15 @@
 
 ## Installation
 
-- **Steam Workshop**: [Enemy Tracker](https://steamcommunity.com/sharedfiles/filedetails/?id=)
-- **Nexus Mods**: [Enemy Tracker](https://www.nexusmods.com/x4foundations/mods/)
+- **Steam Workshop**: [Shadow Tracker](https://steamcommunity.com/sharedfiles/filedetails/?id=)
+- **Nexus Mods**: [Shadow Tracker](https://www.nexusmods.com/x4foundations/mods/)
 
 ## Usage
 
 
 ## Video
 
-- [Video demonstration of Enemy Tracker](https://www.youtube.com/watch?v=11111111111)
+- [Video demonstration of Shadow Tracker](https://www.youtube.com/watch?v=11111111111)
 
 ## Credits
 

@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<diff>
+  <add sel="/droplists/wares[@id='basket_wares_rare_01']/select[@weight='1'][8]" pos="after">
+    <select weight="1">
+      <ware ware="inv_shadow_tracker" min="1" max="2" />
+    </select>
+  </add>
+</diff>

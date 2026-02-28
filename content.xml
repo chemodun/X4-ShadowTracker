@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <content
   id=""
-  name="Enemy Tracker"
+  name="Shadow Tracker"
   author="Chem O`Dun"
   version="80001"
   date="2025-03-??"
@@ -9,7 +9,7 @@
   sync="false"
   enabled="1"
   lastupdate=""
-  description="">
+  description="Experimental spy device designed for secure and undetectable tracking of both allied and enemy ships.">
   <text language="7"
     description=""></text>
   <!-- French -->

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<mdscript name="Enemy_Tracker_Interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<mdscript name="Shadow_Tracker_Interface" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <cues>
 
     <cue name="Main" version="1">
@@ -12,12 +12,12 @@
           <conditions>
             <check_any>
               <event_cue_signalled cue="md.Interact_Menu_API.Reloaded" />
-              <event_ui_triggered screen="'EnemyTracker'" control="'Reloaded'" />
+              <event_ui_triggered screen="'ShadowTracker'" control="'Reloaded'" />
               <event_game_loaded />
             </check_any>
           </conditions>
           <actions>
-            <include_actions ref="md.Enemy_Tracker.Get_Variables" />
+            <include_actions ref="md.Shadow_Tracker.Get_Variables" />
             <do_if value="not $isInitializedAt? or (player.age - $isInitializedAt) gt 10">
               <set_value name="$isInitializedAt" exact="player.age" />
               <reset_cue cue="this" />
@@ -28,11 +28,11 @@
 
         <cue name="On_Debug_Level_Changed" instantiate="true" version="1">
           <conditions>
-            <event_object_signalled object="player.entity" param="'EnemyTracker.DebugLevelChangedSignal'" />
+            <event_object_signalled object="player.entity" param="'ShadowTracker.DebugLevelChangedSignal'" />
           </conditions>
           <actions>
-            <include_actions ref="md.Enemy_Tracker.Get_Variables" />
-            <debug_text text="'EnemyTracker Options: Debug Level changed to %s' .[@player.entity.$enemyTracker.$debugLevel]" context="false" filter="scripts" chance="$debugChance" />
+            <include_actions ref="md.Shadow_Tracker.Get_Variables" />
+            <debug_text text="'ShadowTracker Options: Debug Level changed to %s' .[@player.entity.$shadowTracker.$debugLevel]" context="false" filter="scripts" chance="$debugChance" />
           </actions>
         </cue>
 
@@ -49,14 +49,14 @@
             <check_value value="not @event.param.$object.isclass.{class.ship_xs}" />
           </conditions>
           <actions>
-            <include_actions ref="md.Enemy_Tracker.Get_Variables" />
+            <include_actions ref="md.Shadow_Tracker.Get_Variables" />
             <set_value name="$params" exact="event.param" />
-            <debug_text text="'EnemyTracker: Add_Menu_Actions on: %s'.[@event.param.$object]" chance="$debugChance" filter="scripts" />
+            <debug_text text="'ShadowTracker: Add_Menu_Actions on: %s'.[@event.param.$object]" chance="$debugChance" filter="scripts" />
             <set_value name="$object" exact="event.param.$object" />
             <signal_cue_instantly
               cue="md.Interact_Menu_API.Add_Action"
               param="table[
-                  $id             = 'enemy_tracker_enable_tracker',
+                  $id             = 'shadow_tracker_enable_tracker',
                   $section        = 'order',
                   $text           = {1972092415, 111}.[@$object.name, @$object.idcode],
                   $mouseover      = {1972092415, 111}.[@$object.name, @$object.idcode],
@@ -72,8 +72,8 @@
             <event_cue_signalled />
           </conditions>
           <actions>
-            <include_actions ref="md.Enemy_Tracker.Get_Variables" />
-            <debug_text text="'EnemyTracker: On_Enable_Tracker invoked with param: %s'.[event.param]" chance="$debugChance" filter="scripts" />
+            <include_actions ref="md.Shadow_Tracker.Get_Variables" />
+            <debug_text text="'ShadowTracker: On_Enable_Tracker invoked with param: %s'.[event.param]" chance="$debugChance" filter="scripts" />
             <set_value name="$object" exact="event.param.$object" />
             <set_object_forced_radar_visible object="$object" />
             <remove_value name="$object" />

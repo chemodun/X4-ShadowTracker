@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<diff>
+  <add sel="/stocks/stock[@id='pirate_trader_special']" if="/stocks/stock[@id='pirate_trader_special']">
+      <ware ref="inv_shadow_tracker" min="0" max="5" chance="100" />
+  </add>
+</diff>

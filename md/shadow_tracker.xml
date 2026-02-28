@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="Shadow_Tracker" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <cues>
+
+    <cue name="Main" version="1">
+      <actions>
+        <set_value name="$debugChance" exact="0" />
+        <include_actions ref="Get_Variables" />
+        <include_actions ref="Update_Inventory" />
+      </actions>
+      <cues>
+
+        <library name="Get_Variables" version="1">
+          <actions>
+            <do_if value="@player.entity.$shadowTracker == null">
+              <set_value name="player.entity.$shadowTracker" exact="table[
+                $debugLevel = 'trace'
+                ]" />
+            </do_if>
+            <set_value name="$debugChance" exact="if @player.entity.$shadowTracker.$debugLevel == null or @player.entity.$shadowTracker.$debugLevel == 'none' then 0 else 100" />
+          </actions>
+        </library>
+
+        <library name="Update_Inventory" version="1">
+          <actions>
+            <do_if value="@player.entity.$shadowTracker.$isInventoryUpdated == null or @player.entity.$shadowTracker.$isInventoryUpdated == false">
+              <set_value name="player.entity.$shadowTracker.$isInventoryUpdated" exact="true" />
+              <add_inventory ware="ware.inv_shadow_tracker" exact="5" />
+              <debug_text value="ShadowTracker: inventory updated." context="false" filter="scripts" chance="$debugChance" />
+            </do_if>
+          </actions>
+        </library>
+
+      </cues>
+    </cue>
+
+
+  </cues>
+</mdscript>
