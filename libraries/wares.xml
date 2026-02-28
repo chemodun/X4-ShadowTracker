@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <diff>
   <add sel="/wares/ware[@id='inv_securityslicer']" pos="after">
-    <ware id="inv_shadow_tracker" name="{1972092415,1}" description="{1972092415,14402}" group="contraband" transport="inventory" volume="1" illegal="antigone argon holyorder ministry paranid" tags="crafting inventory">
-      <price min="123509" average="132210" max="145507" />
+    <ware id="inv_shadow_tracker" name="{1972092415,1}" description="{1972092415,2}" group="contraband" transport="inventory" volume="1" illegal="antigone argon holyorder ministry paranid" tags="crafting inventory">
+      <price min="23509" average="32210" max="45507" />
       <production time="10" amount="1" method="default" name="{20206,101}">
         <primary>
           <ware ware="inv_agidevice_01" amount="1" />
@@ -11,8 +11,8 @@
         </primary>
       </production>
       <container ref="sm_gen_wares_rare_01_macro" />
-      <icon video="ware_software_macro" />
-      <restriction buy="1" />
+      <icon video="ware_inventory_modulartrigger_macro" />
+      <restriction buy="5" />
       <sources>
         <source type="{20224,31}" />
         <source type="{20224,1001}" />

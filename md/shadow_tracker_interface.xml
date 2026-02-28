@@ -53,29 +53,51 @@
             <set_value name="$params" exact="event.param" />
             <debug_text text="'ShadowTracker: Add_Menu_Actions on: %s'.[@event.param.$object]" chance="$debugChance" filter="scripts" />
             <set_value name="$object" exact="event.param.$object" />
-            <signal_cue_instantly
-              cue="md.Interact_Menu_API.Add_Action"
-              param="table[
-                  $id             = 'shadow_tracker_enable_tracker',
+            <do_if value="$installedTrackers.indexof.{$object} gt 0">
+              <signal_cue_instantly
+                cue="md.Interact_Menu_API.Add_Action"
+                param="table[
+                  $id             = 'shadow_tracker_disable',
+                  $section        = 'order',
+                  $text           = {1972092415, 112}.[@$object.name, @$object.idcode],
+                  $mouseover      = {1972092415, 112}.[@$object.name, @$object.idcode],
+                  $active         = true,
+                  $callback       = On_Manage_Tracker,
+                ]" />
+            </do_if>
+            <do_else>
+              <set_value name="$trackerAvailable" exact="@player.entity.inventory.{ware.inv_shadow_tracker}.exists" />
+              <signal_cue_instantly
+                cue="md.Interact_Menu_API.Add_Action"
+                param="table[
+                  $id             = 'shadow_tracker_enable',
                   $section        = 'order',
                   $text           = {1972092415, 111}.[@$object.name, @$object.idcode],
-                  $mouseover      = {1972092415, 111}.[@$object.name, @$object.idcode],
-                  $active         = true,
-                  $callback       = On_Enable_Tracker,
+                  $mouseover      = if $trackerAvailable then {1972092415, 111}.[@$object.name, @$object.idcode] else {1972092415, 119},
+                  $active         = $trackerAvailable,
+                  $callback       = On_Manage_Tracker,
                 ]" />
+            </do_else>
             <remove_value name="$object" />
           </actions>
         </cue>
 
-        <cue name="On_Enable_Tracker" instantiate="true" version="1">
+        <cue name="On_Manage_Tracker" instantiate="true" version="1">
           <conditions>
             <event_cue_signalled />
           </conditions>
           <actions>
             <include_actions ref="md.Shadow_Tracker.Get_Variables" />
-            <debug_text text="'ShadowTracker: On_Enable_Tracker invoked with param: %s'.[event.param]" chance="$debugChance" filter="scripts" />
+            <debug_text text="'ShadowTracker: On_Manage_Tracker invoked with param: %s'.[event.param]" chance="$debugChance" filter="scripts" />
             <set_value name="$object" exact="event.param.$object" />
-            <set_object_forced_radar_visible object="$object" />
+            <set_object_forced_radar_visible object="$object" visible="@event.param.$id == 'shadow_tracker_enable'" />
+            <do_if value="event.param.$id == 'shadow_tracker_enable'">
+              <append_to_list list="$installedTrackers" exact="$object" />
+              <remove_inventory ware="ware.inv_shadow_tracker" exact="1" />
+            </do_if>
+            <do_else>
+              <remove_from_list list="$installedTrackers" exact="$object" />
+            </do_else>
             <remove_value name="$object" />
           </actions>
         </cue>

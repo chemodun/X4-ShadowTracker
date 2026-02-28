@@ -14,10 +14,13 @@
           <actions>
             <do_if value="@player.entity.$shadowTracker == null">
               <set_value name="player.entity.$shadowTracker" exact="table[
+                $installed = [],
+                $isInventoryUpdated = false,
                 $debugLevel = 'trace'
                 ]" />
             </do_if>
             <set_value name="$debugChance" exact="if @player.entity.$shadowTracker.$debugLevel == null or @player.entity.$shadowTracker.$debugLevel == 'none' then 0 else 100" />
+            <set_value name="$installedTrackers" exact="@player.entity.$shadowTracker.$installed" />
           </actions>
         </library>
 
