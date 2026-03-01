@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<diff>
+    <add sel="/icons">
+        <icon name="mapst_ol_shadow_tracker" texture="extensions\shadow_tracker\assets\textures\ui\map_sidebar_tabs\mapst_shadow_tracker.tga" height="128" width="128"></icon>
+    </add>
+</diff>
