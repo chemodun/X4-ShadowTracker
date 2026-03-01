@@ -15,7 +15,7 @@
             <do_if value="@player.entity.$shadowTracker == null">
               <set_value name="player.entity.$shadowTracker" exact="table[
                 $isInventoryUpdated = false,
-                $debugLevel = 'trace'
+                $debugLevel = 'none'
                 ]" />
               <create_group groupname="player.entity.$shadowTracker.$installed" />
             </do_if>
