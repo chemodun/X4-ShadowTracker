@@ -14,13 +14,14 @@
           <actions>
             <do_if value="@player.entity.$shadowTracker == null">
               <set_value name="player.entity.$shadowTracker" exact="table[
-                $installed = [],
                 $isInventoryUpdated = false,
                 $debugLevel = 'trace'
                 ]" />
+              <create_group groupname="player.entity.$shadowTracker.$installed" />
             </do_if>
             <set_value name="$debugChance" exact="if @player.entity.$shadowTracker.$debugLevel == null or @player.entity.$shadowTracker.$debugLevel == 'none' then 0 else 100" />
             <set_value name="$installedTrackers" exact="@player.entity.$shadowTracker.$installed" />
+            <debug_text text="'ShadowTracker: Get_Variables executed on %s'.[player.entity.$shadowTracker]" chance="$debugChance" filter="scripts" />
           </actions>
         </library>
 
@@ -29,7 +30,7 @@
             <do_if value="@player.entity.$shadowTracker.$isInventoryUpdated == null or @player.entity.$shadowTracker.$isInventoryUpdated == false">
               <set_value name="player.entity.$shadowTracker.$isInventoryUpdated" exact="true" />
               <add_inventory ware="ware.inv_shadow_tracker" exact="5" />
-              <debug_text value="ShadowTracker: inventory updated." context="false" filter="scripts" chance="$debugChance" />
+              <debug_text text="ShadowTracker: inventory updated." context="false" filter="scripts" chance="$debugChance" />
             </do_if>
           </actions>
         </library>
