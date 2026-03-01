@@ -155,8 +155,16 @@ function shadowTracker.prepareTabData(infoTableData)
     trace("No installed trackers in config, skipping player POI data preparation")
     return
   end
+  local objects = {}
   for i = 1, #config.installed do
-    shadowTrackerList[#shadowTrackerList + 1] = config.installed[i]
+    local object = config.installed[i]
+    local name, hull, purpose, uiRelation, sector, classId, realClassId, idCode, fleetName = GetComponentData(object, "name", "hullpercent", "primarypurpose", "uirelation", "sector", "classid", "realclassid", "idcode", "fleetname")
+    objects[#objects + 1] = { id = object, name = name, fleetname = fleetName, objectid = idCode, classid = classId, realclassid = realClassId, hull = hull, purpose = purpose, relation = uiRelation, sector = sector }
+  end
+  table.sort(objects, menu.componentSorter(menu.propertySorterType))
+  for i = 1, #objects do
+    local object = objects[i]
+    table.insert(shadowTrackerList, object.id)
   end
   trace("Prepared Shadow Tracker data with " .. tostring(#shadowTrackerList) .. " entries")
 end
