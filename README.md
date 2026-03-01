@@ -23,7 +23,7 @@ Implementation of the Shadow Tracker device, allowing players to track specific 
 
 ## Installation
 
-- **Steam Workshop**: [Shadow Tracker](https://steamcommunity.com/sharedfiles/filedetails/?id=)
+- **Steam Workshop**: [Shadow Tracker](https://steamcommunity.com/sharedfiles/filedetails/?id=3676424693)
 - **Nexus Mods**: [Shadow Tracker](https://www.nexusmods.com/x4foundations/mods/2000)
 
 ## Usage
@@ -87,7 +87,7 @@ There you can enable debug logging in the options menu, which will log detailed 
 
 ## Changelog
 
-### [8.00.01] - 2026-03-25??
+### [8.00.01] - 2026-03-01
 
 - **Added**
   - Initial public version
