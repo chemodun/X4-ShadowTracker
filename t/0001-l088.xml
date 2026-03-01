@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Chinese Traditional -->
+<diff>
+    <add sel="/language">
+        <page id="1972092415" voice="no" title="Shadow Tracker" descr="Shadow Tracker">
+            <t id="1">Shadow Tracker</t>
+            <t id="2">實驗性間諜裝置，專為安全且無法檢測地追蹤盟軍和敵方艦船而設計。</t>
+            <t id="100">%s \(%s\)</t>
+            <t id="101">啟用追蹤</t>
+            <t id="102">停用追蹤</t>
+            <t id="111">{1972092415, 101}: {1972092415, 100}</t>
+            <t id="112">{1972092415, 102}: {1972092415, 100}</t>
+            <t id="119">您的庫存中沒有可用的Shadow Tracker裝置。</t>
+            <t id="211">{1972092415, 101}: {1972092415, 100}.\n庫存中的Shadow Tracker: %s。</t>
+            <t id="90900">其他</t>
+            <t id="90990">除錯層級:</t>
+            <t id="90991">無除錯</t>
+            <t id="90992">除錯</t>
+            <t id="90993">追蹤</t>
+        </page>
+    </add>
+</diff>

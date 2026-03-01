@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Polish -->
+<diff>
+    <add sel="/language">
+        <page id="1972092415" voice="no" title="Shadow Tracker" descr="Shadow Tracker">
+            <t id="1">Shadow Tracker</t>
+            <t id="2">Eksperymentalne urządzenie szpiegowskie zaprojektowane do bezpiecznego i niewykrywalnego śledzenia zarówno sprzymierzonych, jak i wrogich statków.</t>
+            <t id="100">%s \(%s\)</t>
+            <t id="101">Włącz śledzenie</t>
+            <t id="102">Wyłącz śledzenie</t>
+            <t id="111">{1972092415, 101}: {1972092415, 100}</t>
+            <t id="112">{1972092415, 102}: {1972092415, 100}</t>
+            <t id="119">W twoim ekwipunku nie ma dostępnego urządzenia Shadow Tracker.</t>
+            <t id="211">{1972092415, 101}: {1972092415, 100}.\nShadow Trackery w ekwipunku: %s.</t>
+            <t id="90900">Inne</t>
+            <t id="90990">Poziom debugowania:</t>
+            <t id="90991">Bez debugowania</t>
+            <t id="90992">Debugowanie</t>
+            <t id="90993">Śledzenie</t>
+        </page>
+    </add>
+</diff>

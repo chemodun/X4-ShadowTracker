@@ -4,56 +4,56 @@
   name="Shadow Tracker"
   author="Chem O`Dun"
   version="80001"
-  date="2025-03-??"
+  date="2025-03-01"
   save="false"
   sync="false"
   enabled="1"
   lastupdate=""
-  description="Experimental spy device designed for secure and undetectable tracking of both allied and enemy ships.">
+  description="Implementation of the Shadow Tracker device, allowing players to track specific ships in the universe by consuming a special inventory item.">
   <text language="7"
-    description=""></text>
+    description="">Implementation of the Shadow Tracker device, allowing players to track specific ships in the universe by consuming a special inventory item.</text>
   <!-- French -->
   <text language="33"
-    description=""></text>
+    description="Dispositif d'espionnage expérimental conçu pour un suivi sécurisé et indétectable des vaisseaux alliés et ennemis."></text>
   <!-- Spanish -->
   <text language="34"
-    description=""></text>
+    description="Dispositivo espía experimental diseñado para el seguimiento seguro e indetectable de naves aliadas y enemigas."></text>
   <!-- Italian -->
   <text language="39"
-    description=""></text>
+    description="Dispositivo spia sperimentale progettato per il tracciamento sicuro e non rilevabile di navi alleate e nemiche."></text>
   <!-- Czech -->
   <text language="42"
-    description=""></text>
+    description="Experimentální špionážní zařízení navržené pro bezpečné a neodhalitelné sledování spojeneckých i nepřátelských lodí."></text>
   <!-- English -->
   <text language="44"
-    description=""></text>
+    description="Experimental spy device designed for secure and undetectable tracking of both allied and enemy ships."></text>
   <!-- Polish -->
   <text language="48"
-    description=""></text>
+    description="Eksperymentalne urządzenie szpiegowskie zaprojektowane do bezpiecznego i niewykrywalnego śledzenia zarówno sprzymierzonych, jak i wrogich statków."></text>
   <!-- German -->
   <text language="49"
-    description=""></text>
+    description="Experimentelles Spionagegerät für sichere und unauffindbare Verfolgung von verbündeten und feindlichen Schiffen."></text>
   <!-- Portuguese -->
   <text language="55"
-    description=""></text>
+    description="Dispositivo espião experimental projetado para rastreamento seguro e indetectável de naves aliadas e inimigas."></text>
   <!-- Japanese -->
   <text language="81"
-    description=""></text>
+    description="同盟国および敵国の船舶を安全かつ検出不可能に追跡するために設計された実験的なスパイ装置。"></text>
   <!-- Korean -->
   <text language="82"
-    description=""></text>
+    description="아군 및 적 함선을 안전하고 탐지 불가능하게 추적하도록 설계된 실험용 스파이 장치."></text>
   <!-- Chinese Simplified -->
   <text language="86"
-    description=""></text>
+    description="实验性间谍装置，专为安全且无法检测地追踪盟军和敌方舰船而设计。"></text>
   <!-- Chinese Traditional -->
   <text language="88"
-    description=""></text>
+    description="實驗性間諜裝置，專為安全且無法檢測地追蹤盟軍和敵方艦船而設計。"></text>
   <!-- Turkish -->
   <text language="90"
-    description=""></text>
+    description="Müttefik ve düşman gemilerinin güvenli ve tespit edilemez şekilde takibi için tasarlanmış deneysel casus cihazı."></text>
   <!-- Ukrainian -->
   <text language="380"
-    description=""></text>
+    description="Експериментальний шпигунський пристрій, призначений для безпечного та невидимого відстеження як союзних, так і ворожих кораблів."></text>
   <dependency version="800"></dependency>
   <dependency id="ws_2042901274" optional="false" name="SirNukes Mod Support APIs" version="195"></dependency>
   <dependency id="kuerteeUIExtensionsAndHUD" optional="false" name="kuertee UI Extensions and HUD" version="804"></dependency>

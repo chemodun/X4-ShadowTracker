@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- English -->
+<diff>
+    <add sel="/language">
+        <page id="1972092415" voice="no" title="Shadow Tracker" descr="Shadow Tracker">
+            <t id="1">Shadow Tracker</t>
+            <t id="2">Experimental spy device designed for secure and undetectable tracking of both allied and enemy ships.</t>
+            <t id="100">%s \(%s\)</t>
+            <t id="101">Enable Tracking</t>
+            <t id="102">Disable Tracking</t>
+            <t id="111">{1972092415, 101}: {1972092415, 100}</t>
+            <t id="112">{1972092415, 102}: {1972092415, 100}</t>
+            <t id="119">There is no available Shadow Tracker device in your inventory.</t>
+            <t id="211">{1972092415, 101}: {1972092415, 100}.\nShadow Trackers in inventory: %s.</t>
+            <t id="90900">Other</t>
+            <t id="90990">Debug level:</t>
+            <t id="90991">No debug</t>
+            <t id="90992">Debug</t>
+            <t id="90993">Trace</t>
+        </page>
+    </add>
+</diff>

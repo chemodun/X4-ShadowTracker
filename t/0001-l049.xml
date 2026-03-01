@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- German -->
+<diff>
+    <add sel="/language">
+        <page id="1972092415" voice="no" title="Shadow Tracker" descr="Shadow Tracker">
+            <t id="1">Shadow Tracker</t>
+            <t id="2">Experimentelles Spionagegerät für sichere und unauffindbare Verfolgung von verbündeten und feindlichen Schiffen.</t>
+            <t id="100">%s \(%s\)</t>
+            <t id="101">Verfolgung aktivieren</t>
+            <t id="102">Verfolgung deaktivieren</t>
+            <t id="111">{1972092415, 101}: {1972092415, 100}</t>
+            <t id="112">{1972092415, 102}: {1972092415, 100}</t>
+            <t id="119">Es ist kein Shadow Tracker-Gerät in Ihrem Inventar verfügbar.</t>
+            <t id="211">{1972092415, 101}: {1972092415, 100}.\nShadow Tracker im Inventar: %s.</t>
+            <t id="90900">Andere</t>
+            <t id="90990">Debug-Level:</t>
+            <t id="90991">Kein Debug</t>
+            <t id="90992">Debug</t>
+            <t id="90993">Trace</t>
+        </page>
+    </add>
+</diff>

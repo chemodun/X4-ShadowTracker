@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Korean -->
+<diff>
+    <add sel="/language">
+        <page id="1972092415" voice="no" title="Shadow Tracker" descr="Shadow Tracker">
+            <t id="1">Shadow Tracker</t>
+            <t id="2">아군 및 적 함선을 안전하고 탐지 불가능하게 추적하도록 설계된 실험용 스파이 장치.</t>
+            <t id="100">%s \(%s\)</t>
+            <t id="101">추적 활성화</t>
+            <t id="102">추적 비활성화</t>
+            <t id="111">{1972092415, 101}: {1972092415, 100}</t>
+            <t id="112">{1972092415, 102}: {1972092415, 100}</t>
+            <t id="119">인벤토리에 사용 가능한 Shadow Tracker 장치가 없습니다.</t>
+            <t id="211">{1972092415, 101}: {1972092415, 100}.\n인벤토리의 Shadow Tracker: %s.</t>
+            <t id="90900">기타</t>
+            <t id="90990">디버그 수준:</t>
+            <t id="90991">디버그 없음</t>
+            <t id="90992">디버그</t>
+            <t id="90993">추적</t>
+        </page>
+    </add>
+</diff>

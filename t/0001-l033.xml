@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- French -->
+<diff>
+    <add sel="/language">
+        <page id="1972092415" voice="no" title="Shadow Tracker" descr="Shadow Tracker">
+            <t id="1">Shadow Tracker</t>
+            <t id="2">Dispositif d'espionnage expérimental conçu pour un suivi sécurisé et indétectable des vaisseaux alliés et ennemis.</t>
+            <t id="100">%s \(%s\)</t>
+            <t id="101">Activer le suivi</t>
+            <t id="102">Désactiver le suivi</t>
+            <t id="111">{1972092415, 101}: {1972092415, 100}</t>
+            <t id="112">{1972092415, 102}: {1972092415, 100}</t>
+            <t id="119">Il n'y a pas de dispositif Shadow Tracker disponible dans votre inventaire.</t>
+            <t id="211">{1972092415, 101}: {1972092415, 100}.\nShadow Trackers dans l'inventaire: %s.</t>
+            <t id="90900">Autre</t>
+            <t id="90990">Niveau de débogage:</t>
+            <t id="90991">Pas de débogage</t>
+            <t id="90992">Débogage</t>
+            <t id="90993">Traçage</t>
+        </page>
+    </add>
+</diff>

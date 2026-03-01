@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Chinese Simplified -->
+<diff>
+    <add sel="/language">
+        <page id="1972092415" voice="no" title="Shadow Tracker" descr="Shadow Tracker">
+            <t id="1">Shadow Tracker</t>
+            <t id="2">实验性间谍装置，专为安全且无法检测地追踪盟军和敌方舰船而设计。</t>
+            <t id="100">%s \(%s\)</t>
+            <t id="101">启用追踪</t>
+            <t id="102">禁用追踪</t>
+            <t id="111">{1972092415, 101}: {1972092415, 100}</t>
+            <t id="112">{1972092415, 102}: {1972092415, 100}</t>
+            <t id="119">您的库存中没有可用的Shadow Tracker设备。</t>
+            <t id="211">{1972092415, 101}: {1972092415, 100}.\n库存中的Shadow Tracker: %s。</t>
+            <t id="90900">其他</t>
+            <t id="90990">调试级别:</t>
+            <t id="90991">无调试</t>
+            <t id="90992">调试</t>
+            <t id="90993">跟踪</t>
+        </page>
+    </add>
+</diff>
