@@ -10,6 +10,7 @@
       <t id="111">{1972092415, 101}: {1972092415, 100}</t>
       <t id="112">{1972092415, 102}: {1972092415, 100}</t>
       <t id="119">There is no available Shadow Tracker device in your inventory.</t>
+      <t id="211">{1972092415, 101}: {1972092415, 100}.\nShadow Trackers in inventory: %s.</t>
       <t id="90900">Other</t>
       <t id="90990">Debug level:</t>
       <t id="90991">No debug</t>

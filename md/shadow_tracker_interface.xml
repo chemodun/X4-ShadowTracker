@@ -65,15 +65,15 @@
                 ]" />
             </do_if>
             <do_else>
-              <set_value name="$trackerAvailable" exact="@player.entity.inventory.{ware.inv_shadow_tracker}.exists" />
+              <set_value name="$trackersAvailable" exact="@player.entity.inventory.{ware.inv_shadow_tracker}.count" />
               <signal_cue_instantly
                 cue="md.Interact_Menu_API.Add_Action"
                 param="table[
                   $id             = 'shadow_tracker_enable',
                   $section        = 'order',
                   $text           = {1972092415, 111}.[@$object.name, @$object.idcode],
-                  $mouseover      = if $trackerAvailable then {1972092415, 111}.[@$object.name, @$object.idcode] else {1972092415, 119},
-                  $active         = $trackerAvailable,
+                  $mouseover      = if $trackersAvailable gt 0 then {1972092415, 211}.[@$object.name, @$object.idcode, $trackersAvailable] else {1972092415, 119},
+                  $active         = $trackersAvailable gt 0,
                   $callback       = On_Manage_Tracker,
                 ]" />
             </do_else>
