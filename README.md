@@ -10,12 +10,15 @@ Implementation of the Shadow Tracker device, allowing players to track specific 
 
 ## Requirements
 
-- **X4: Foundations**: Version 8.00HF3 or newer.
+- **X4: Foundations**: Version 8.00HF3, 9.00 or newer.
 - **UI Extensions and HUD**: Version v8.0.4.0 or higher by [kuertee](https://next.nexusmods.com/profile/kuertee?gameId=2659).
   - Available on Nexus Mods: [UI Extensions and HUD](https://www.nexusmods.com/x4foundations/mods/552)
 - **Mod Support APIs**: Version 1.95 or higher by [SirNukes](https://next.nexusmods.com/profile/sirnukes?gameId=2659).
   - Available on Steam: [SirNukes Mod Support APIs](https://steamcommunity.com/sharedfiles/filedetails/?id=2042901274)
   - Available on Nexus Mods: [Mod Support APIs](https://www.nexusmods.com/x4foundations/mods/503)
+- **Options Helper**: Version 1.10 or higher by [SirNukes](https://next.nexusmods.com/profile/sirnukes?gameId=2659).
+  - Available on Steam: [Options Helper](https://steamcommunity.com/sharedfiles/filedetails/?id=3715253556)
+  - Available on Nexus Mods: [Options Helper](https://www.nexusmods.com/x4foundations/mods/2089)
 
 ## Compatibility
 
@@ -86,6 +89,11 @@ There you can enable debug logging in the options menu, which will log detailed 
 - [SirNukes](https://next.nexusmods.com/profile/sirnukes?gameId=2659) — for the `Mod Support APIs` that power the UI hooks.
 
 ## Changelog
+
+### [8.00.02] - 2026-07-22
+
+- **Fixed**
+  - Fixed an issue where disabling tracking of captured ships was not available.
 
 ### [8.00.01] - 2026-03-01
 
