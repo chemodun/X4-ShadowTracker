@@ -44,7 +44,7 @@
             <check_value value="@event.param.$selectedplayerships.count == null or @event.param.$selectedplayerships.count == 0 or @event.param.$selectedplayerships.count == 1 and @event.param.$showPlayerInteractions == 1" />
             <check_value value="@event.param.$selectedotherobjects.count == null or @event.param.$selectedotherobjects.count == 0 or @event.param.$selectedotherobjects.count == 1 and @event.param.$selectedotherobjects.indexof.{@event.param.$object} gt 0" />
             <check_value value="@event.param.$selectedplayerdeployables.count == null or @event.param.$selectedplayerdeployables.count == 0" />
-            <check_value value="@event.param.$object.owner != faction.player" />
+            <check_value value="@event.param.$object.owner != faction.player or @$installedTrackers.indexof.{@event.param.$object} gt 0" />
             <check_value value="@event.param.$object.isclass.{class.ship}" />
             <check_value value="not @event.param.$object.isclass.{class.ship_xs}" />
           </conditions>
