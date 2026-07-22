@@ -34,83 +34,34 @@
             <debug_text
               text="'Shadow Tracker Options: Current options: %s' . [@player.entity.$shadowTracker]"
               context="false" filter="scripts" chance="$debugChance" />
-            <create_list name="$debugLevelOptions" />
-            <do_for_each name="$indexValue" in="$debugLevelIndexes" counter="$index">
-              <do_if value="$index == 1">
-                <set_value name="$textValue" exact="{1972092415, 90991}" />
-              </do_if>
-              <do_elseif value="$index == 2">
-                <set_value name="$textValue" exact="{1972092415, 90992}" />
-              </do_elseif>
-              <do_else>
-                <set_value name="$textValue" exact="{1972092415, 90993}" />
-              </do_else>
-              <append_to_list name="$debugLevelOptions"
-                exact="table[ $text = $textValue, $value = $indexValue ]" />
-            </do_for_each>
+            <set_value name="$debugLevelOptions" exact="[
+              table[$text = {1972092415, 90991}, $value = 'none'],
+              table[$text = {1972092415, 90992}, $value = 'debug'],
+              table[$text = {1972092415, 90993}, $value = 'trace']
+            ]" />
             <set_value name="$debugLevelCurrentIndex" exact="$debugLevelIndexes.indexof.{@player.entity.$shadowTracker.$debugLevel}" />
             <do_if value="$debugLevelCurrentIndex == 0">
               <set_value name="$debugLevelCurrentIndex" exact="1" />
             </do_if>
 
-            <run_actions ref="Add_Title_Row">
+            <run_actions ref="md.Options_Helper.Add_Title_Row">
               <param name="title" value="{1972092415, 90900}" />
             </run_actions>
 
-            <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" />
-            <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
-              param="table[
-                $col = 1,
-                $colSpan = 8,
-                $text = {1972092415, 90990},
-              ]" />
-            <signal_cue_instantly cue="md.Simple_Menu_API.Make_Dropdown"
-              param="table[
-                $id = 'shadow_tracker_debugLevel',
-                $col = 9,
-                $colSpan = 4,
-                $options = $debugLevelOptions,
-                $startOption = $debugLevelCurrentIndex,
-                $onDropDownConfirmed = Shadow_Tracker_Handle_Debug_Level,
-                ]" />
+            <run_actions ref="md.Options_Helper.Add_Dropdown">
+              <param name="id" value="'debugLevel'" />
+              <param name="options" value="$debugLevelOptions" />
+              <param name="currentIndex" value="$debugLevelCurrentIndex" />
+              <param name="col" value="1" />
+              <param name="textColSpan" value="8" />
+              <param name="text" value="{1972092415, 90990}" />
+              <param name="dropdownColSpan" value="4" />
+              <param name="handle" value="Shadow_Tracker_Handle_Debug_Level" />
+            </run_actions>
             <remove_value name="$debugLevelOptions" />
             <remove_value name="$debugLevelCurrentIndex" />
           </actions>
         </cue>
-
-
-        <library name="Add_Title_Row" purpose="run_actions">
-          <params>
-            <param name="title" />
-          </params>
-          <actions>
-            <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" param="table[$selectable = false]" />
-            <signal_cue_instantly cue="md.Simple_Menu_API.Make_Text"
-              param="table[
-                $col = 1,
-                $colSpan = 12,
-                $fontsize = 'Helper.titleFontSize',
-                $titleColor = 'Color.text_normal',
-                $halign = 'center',
-                $text = $title,
-              ]" />
-            <include_actions ref="Add_Empty_Row" />
-          </actions>
-        </library>
-
-        <library name="Add_Empty_Row" purpose="include_actions">
-          <actions>
-            <signal_cue_instantly cue="md.Simple_Menu_API.Add_Row" param="table[$selectable = false]" />
-            <signal_cue_instantly
-              cue="md.Simple_Menu_API.Make_Text"
-              param="table[
-                $col = 1,
-                $colSpan = 12,
-                $height = 'Helper.borderSize',
-                $fontsize = 'Helper.borderSize',
-                ]" />
-          </actions>
-        </library>
 
         <cue name="Shadow_Tracker_Handle_Debug_Level" instantiate="true" version="1">
           <conditions>
@@ -119,8 +70,9 @@
           <actions>
             <include_actions ref="md.Shadow_Tracker.Get_Variables" />
             <debug_text text="'Shadow Tracker Options: Debug Level changed to %s' .[event.param.$option.$value]" context="false" filter="scripts" chance="$debugChance" />
-            <set_value name="$commonData" exact="@player.entity.$shadowTracker" />
-            <set_value name="player.entity.$shadowTracker.$debugLevel" exact="event.param.$option.$value" />
+            <set_value name="$resultTable" exact="player.entity.$shadowTracker" />
+            <include_actions ref="md.Options_Helper.Process_Dropdown_Changed" />
+            <remove_value name="$resultTable" />
             <signal_objects object="player.entity" param="'ShadowTracker.DebugLevelChangedSignal'" />
             <raise_lua_event name="'ShadowTracker.ConfigChanged'" />
           </actions>
