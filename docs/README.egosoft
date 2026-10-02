@@ -25,6 +25,11 @@ Implementation of the Shadow Tracker device, allowing players to track specific 
 [*] Available on Steam: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3715253556]Options Helper[/url]
 [*] Available on Nexus Mods: [url=https://www.nexusmods.com/x4foundations/mods/2089]Options Helper[/url]
 [/list]
+[*] [b]Print Extension List[/b]: Version 1.00 or higher by [url=https://next.nexusmods.com/profile/ChemODun/mods?gameId=2659]Chem O`Dun[/url].
+[list]
+[*] Available on Steam: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3770927339]Print Extension List[/url]
+[*] Available on Nexus Mods: [url=https://www.nexusmods.com/x4foundations/mods/2191]Print Extension List[/url]
+[/list]
 [/list]
 [size=130][u]Compatibility[/u][/size]
 [list]
@@ -96,6 +101,17 @@ There you can enable debug logging in the options menu, which will log detailed 
 [/list]
 [size=130][u]Changelog[/u][/size]
 
+[size=125][u][8.00.03] - 2026-10-03[/u][/size]
+[list]
+[*] [b]Changed[/b]
+[list]
+[*] Print Extension List is now required.
+[/list]
+[*] [b]Fixed[/b]
+[list]
+[*] The Shadow Tracker map tab stayed empty for players who own no deployables (satellites, mines, beacons, probes).
+[/list]
+[/list]
 [size=125][u][8.00.02] - 2026-07-22[/u][/size]
 [list]
 [*] [b]Fixed[/b]
