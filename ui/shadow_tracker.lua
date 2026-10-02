@@ -137,18 +137,18 @@ function shadowTracker.prepareTabData(infoTableData)
     return
   end
   if infoTableData.shadowTracker ~= nil then
-    trace("Player POI data already prepared, skipping")
+    trace("Shadow Tracker data already prepared, skipping")
     return
   end
   infoTableData.shadowTracker = {}
   local shadowTrackerList = infoTableData.shadowTracker
   local config = shadowTracker.getConfig()
   if config == nil then
-    debug("Config is nil, cannot prepare player POI data")
+    debug("Config is nil, cannot prepare Shadow Tracker data")
     return
   end
   if config.installed == nil or #config.installed == 0 then
-    trace("No installed trackers in config, skipping player POI data preparation")
+    trace("No installed trackers in config, skipping Shadow Tracker data preparation")
     return
   end
   local objects = {}
@@ -182,7 +182,7 @@ function shadowTracker.selectTabForPlayerPoiItems(pickedComponent64, newMode)
   trace("pickedComponent64: " .. tostring(pickedComponent64))
   local config = shadowTracker.getConfig()
   if config == nil then
-    debug("Config is nil, cannot select tab for player POI items")
+    debug("Config is nil, cannot select tab for tracked ships")
     return { newmode = newMode }
   end
   for i = 1, #config.installed do
