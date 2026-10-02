@@ -140,10 +140,6 @@ function shadowTracker.prepareTabData(infoTableData)
     trace("Player POI data already prepared, skipping")
     return
   end
-  if infoTableData.deployables == nil or #infoTableData.deployables == 0 then
-    trace("No deployables found in info table data, skipping player POI data preparation")
-    return
-  end
   infoTableData.shadowTracker = {}
   local shadowTrackerList = infoTableData.shadowTracker
   local config = shadowTracker.getConfig()

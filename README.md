@@ -19,6 +19,9 @@ Implementation of the Shadow Tracker device, allowing players to track specific 
 - **Options Helper**: Version 1.10 or higher by [SirNukes](https://next.nexusmods.com/profile/sirnukes?gameId=2659).
   - Available on Steam: [Options Helper](https://steamcommunity.com/sharedfiles/filedetails/?id=3715253556)
   - Available on Nexus Mods: [Options Helper](https://www.nexusmods.com/x4foundations/mods/2089)
+- **Print Extension List**: Version 1.00 or higher by [Chem O`Dun](https://next.nexusmods.com/profile/ChemODun/mods?gameId=2659).
+  - Available on Steam: [Print Extension List](https://steamcommunity.com/sharedfiles/filedetails/?id=3770927339)
+  - Available on Nexus Mods: [Print Extension List](https://www.nexusmods.com/x4foundations/mods/2191)
 
 ## Compatibility
 
@@ -89,6 +92,13 @@ There you can enable debug logging in the options menu, which will log detailed 
 - [SirNukes](https://next.nexusmods.com/profile/sirnukes?gameId=2659) — for the `Mod Support APIs` that power the UI hooks.
 
 ## Changelog
+
+### [8.00.03] - 2026-10-03
+
+- **Changed**
+  - Print Extension List is now required.
+- **Fixed**
+  - The Shadow Tracker map tab stayed empty for players who own no deployables (satellites, mines, beacons, probes).
 
 ### [8.00.02] - 2026-07-22
 
